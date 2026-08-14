@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pakistan Zindabad — Celebrate 14 August 1947 Independence Day with pride, unity, and grandeur. Explore history, national landmarks, fireworks, and the spirit of freedom.">
+  <meta name="keywords" content="Pakistan Independence Day, 14 August 1947, Pakistan Zindabad, Youm-e-Azadi, Quaid-e-Azam, Faisal Mosque, Minar-e-Pakistan">
+  <meta name="theme-color" content="#01411C">
+  <title>Pakistan Zindabad — 14 August 1947 | Independence Day Celebration</title>
+
+  <!-- Google Fonts: Montserrat, Poppins, Cinzel, Great Vibes, Playfair Display, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/crescent-star.svg">
+</head>
+<body id="top">
+
+  <!-- Background Canvas for Fireworks & Star Particles -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+  <div class="islamic-pattern-overlay" aria-hidden="true"></div>
+
+  <!-- Audio Fanfare Controller (Synthesized with Web Audio API) -->
+  <div class="audio-toggle-wrapper">
+    <button id="soundToggle" class="sound-toggle-btn" aria-label="Toggle Celebration Audio" title="Toggle Patriotic Atmosphere Sound">
+      <span class="sound-icon" id="soundIcon">🔊</span>
+      <span class="sound-label">Audio FX</span>
+    </button>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Scroll back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ================================================== -->
+  <!-- NAVIGATION BAR -->
+  <!-- ================================================== -->
+  <header id="navbarHeader">
+    <nav class="navbar" id="mainNavbar" aria-label="Main Navigation">
+      <div class="nav-container">
+        
+        <!-- Brand Logo -->
+        <a href="#top" class="brand-logo" aria-label="Pakistan Zindabad Homepage">
+          <div class="logo-emblem">
+            <img src="assets/icons/crescent-star.svg" alt="Crescent and Star" class="logo-icon">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">PAKISTAN <span class="accent-gold">ZINDABAD</span></span>
+            <span class="brand-sub">14 AUGUST 1947</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#history" class="nav-link">History</a></li>
+          <li class="nav-item"><a href="#celebration" class="nav-link">Celebration</a></li>
+          <li class="nav-item"><a href="#landmarks" class="nav-link">Landmarks</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="#pledge" class="nav-link">Pledges</a></li>
+        </ul>
+
+        <!-- Right Navbar CTA -->
+        <div class="nav-actions">
+          <button class="btn btn-celebrate-nav" id="navCelebrateBtn" aria-label="Celebrate Pakistan Independence Day">
+            <span class="flag-mini">🇵🇰</span>
+            <span>Celebrate 14 August</span>
+            <span class="sparkle">✨</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="hamburger" id="hamburgerBtn" aria-label="Open Mobile Menu" aria-expanded="false" aria-controls="navMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
+
+  <main>
+    <!-- ================================================== -->
+    <!-- HERO SECTION -->
+    <!-- ================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text">PROUD TO BE PAKISTANI • 79 YEARS OF GLORY</span>
+            <span class="badge-star">🌙</span>
+          </div>
+
+          <div class="hero-typography">
+            <h1 class="hero-title">
+              <span class="hero-date-wrapper">
+                <span class="hero-day">14th</span>
+                <span class="hero-month">August</span>
+              </span>
+              <span class="hero-year-glamour">1947</span>
+            </h1>
+            <div class="hero-tagline-block">
+              <div class="glowing-line left"></div>
+              <h2 class="hero-subtitle">INDEPENDENCE DAY OF PAKISTAN</h2>
+              <div class="glowing-line right"></div>
+            </div>
+            <p class="hero-motto">One Nation • One Vision • One Identity</p>
+          </div>
+
+          <!-- Hero Buttons -->
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-grand-celebrate" id="heroCelebrateBtn">
+              <span class="btn-icon">🇵🇰</span>
+              <span class="btn-text">Celebrate Freedom</span>
+              <span class="btn-glow-layer"></span>
+            </button>
+            <a href="#history" class="btn btn-secondary">
+              <span class="btn-icon">📖</span>
+              <span class="btn-text">Explore Our History</span>
+            </a>
+          </div>
+
+          <!-- Live National Pride Metrics -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number" data-target="79">79</span><span class="stat-plus">+</span>
+              <span class="stat-label">Years of Independence</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="240">240</span><span class="stat-plus">M+</span>
+              <span class="stat-label">United Hearts</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="100">100</span><span class="stat-plus">%</span>
+              <span class="stat-label">Resilient Spirit</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual: 3D Animated Waving Pakistan Flag -->
+        <div class="hero-flag-wrapper">
+          <div class="flag-stage">
+            
+            <!-- Golden Finial & Flag Pole -->
+            <div class="flag-pole">
+              <div class="pole-finial"></div>
+              <div class="pole-shaft"></div>
+              <div class="pole-base"></div>
+            </div>
+
+            <!-- CSS 3D Animated Waving Flag -->
+            <div class="waving-flag-container">
+              <div class="waving-flag" id="heroFlag">
+                <div class="flag-cloth">
+                  <!-- White Stripe on Hoist (1/4th) -->
+                  <div class="flag-stripe-white"></div>
+                  <!-- Emerald Green Field (3/4th) -->
+                  <div class="flag-field-green">
+                    <div class="flag-crescent-star">
+                      <svg viewBox="0 0 100 100" class="flag-symbol-svg">
+                        <!-- Crescent -->
+                        <path d="M50,15 A35,35 0 1,0 85,75 A30,30 0 1,1 50,15 Z" fill="#FFFFFF"/>
+                        <!-- Star -->
+                        <polygon points="68,22 72,33 83,34 74,41 78,52 68,45 58,52 62,41 53,34 64,33" fill="#FFFFFF"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <!-- Dynamic Ripple Lighting Overlay -->
+                  <div class="flag-wave-overlay"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge on Flag -->
+            <div class="flag-caption-card">
+              <div class="caption-pulse"></div>
+              <div class="caption-content">
+                <span class="caption-title">پرچم ستارہ و ہلال</span>
+                <span class="caption-subtitle">Symbol of Freedom & Sovereignty</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#countdown" class="scroll-indicator" aria-label="Scroll to Countdown">
+        <span class="scroll-text">Explore Celebration</span>
+        <div class="scroll-chevron"></div>
+      </a>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- COUNTDOWN SECTION -->
+    <!-- ================================================== -->
+    <section class="section countdown-section" id="countdown">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="star-icon">🌙</span>
+            <span>PRECIOUS MOMENTS</span>
+            <span class="star-icon">⭐</span>
+          </div>
+          <h2 class="section-title">COUNTDOWN TO INDEPENDENCE DAY</h2>
+          <p class="section-subtitle">Counting down every second to the historic dawn of 14th August — Youm-e-Azadi</p>
+          <div class="title-accent-bar"></div>
+        </div>
+
+        <div class="countdown-grid" id="countdownGrid">
+          
+          <!-- Days -->
+          <div class="countdown-card">
+            <div class="countdown-card-inner">
+              <div class="countdown-ring">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="54" class="ring-bg"></circle>
+                  <circle cx="60" cy="60" r="54" class="ring-progress" id="daysRing"></circle>
+                </svg>
+                <div class="countdown-value-box">
+                  <span class="countdown-number" id="countDays">00</span>
+                </div>
+              </div>
+              <span class="countdown-label">DAYS</span>
+            </div>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="countdown-separator">:</div>
+
+          <!-- Hours -->
+          <div class="countdown-card">
+            <div class="countdown-card-inner">
+              <div class="countdown-ring">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="54" class="ring-bg"></circle>
+                  <circle cx="60" cy="60" r="54" class="ring-progress" id="hoursRing"></circle>
+                </svg>
+                <div class="countdown-value-box">
+                  <span class="countdown-number" id="countHours">00</span>
+                </div>
+              </div>
+              <span class="countdown-label">HOURS</span>
+            </div>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="countdown-separator">:</div>
+
+          <!-- Minutes -->
+          <div class="countdown-card">
+            <div class="countdown-card-inner">
+              <div class="countdown-ring">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="54" class="ring-bg"></circle>
+                  <circle cx="60" cy="60" r="54" class="ring-progress" id="minutesRing"></circle>
+                </svg>
+                <div class="countdown-value-box">
+                  <span class="countdown-number" id="countMinutes">00</span>
+                </div>
+              </div>
+              <span class="countdown-label">MINUTES</span>
+            </div>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="countdown-separator">:</div>
+
+          <!-- Seconds -->
+          <div class="countdown-card">
+            <div class="countdown-card-inner">
+              <div class="countdown-ring">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="54" class="ring-bg"></circle>
+                  <circle cx="60" cy="60" r="54" class="ring-progress" id="secondsRing"></circle>
+                </svg>
+                <div class="countdown-value-box">
+                  <span class="countdown-number" id="countSeconds">00</span>
+                </div>
+              </div>
+              <span class="countdown-label">SECONDS</span>
+            </div>
+            <div class="card-glow"></div>
+          </div>
+
+        </div>
+
+        <div class="countdown-status" id="countdownStatus">
+          <p class="status-badge">Next Celebration: <span class="highlight-date" id="targetDateDisplay">14 August 2026</span></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- FEATURE CARDS ("OUR PRIDE • OUR PAKISTAN") -->
+    <!-- ================================================== -->
+    <section class="section features-section" id="about">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="star-icon">🇵🇰</span>
+            <span>NATIONAL PILLARS</span>
+            <span class="star-icon">🇵🇰</span>
+          </div>
+          <h2 class="section-title">OUR PRIDE • OUR PAKISTAN</h2>
+          <p class="section-subtitle">The enduring values and unshakeable ideals that define our beloved homeland</p>
+          <div class="title-accent-bar"></div>
+        </div>
+
+        <div class="features-grid">
+          
+          <!-- Card 1: FREEDOM -->
+          <div class="feature-card tilt-card" data-tilt>
+            <div class="feature-card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <span class="feature-icon">🇵🇰</span>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="feature-title">FREEDOM</h3>
+            <p class="feature-desc">Freedom is the foundation of our nation. A sacred trust won through unparalleled sacrifice, dedication, and boundless courage.</p>
+            <div class="feature-tag">Azadi Ka Jazba</div>
+          </div>
+
+          <!-- Card 2: UNITY -->
+          <div class="feature-card tilt-card" data-tilt>
+            <div class="feature-card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <span class="feature-icon">🤝</span>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="feature-title">UNITY</h3>
+            <p class="feature-desc">United we stand, stronger together. From the peaks of Karakoram to the shores of the Arabian Sea, our diversity is our collective power.</p>
+            <div class="feature-tag">Ittehad Ki Quwwat</div>
+          </div>
+
+          <!-- Card 3: FAITH -->
+          <div class="feature-card tilt-card" data-tilt>
+            <div class="feature-card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <span class="feature-icon">🌙</span>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="feature-title">FAITH</h3>
+            <p class="feature-desc">Faith gives us strength and direction. An unwavering moral compass that guides Pakistan through every triumph and test of time.</p>
+            <div class="feature-tag">Iman Ka Noor</div>
+          </div>
+
+          <!-- Card 4: PEOPLE -->
+          <div class="feature-card tilt-card" data-tilt>
+            <div class="feature-card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <span class="feature-icon">👥</span>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="feature-title">PEOPLE</h3>
+            <p class="feature-desc">Our people are the heart of Pakistan. Passionate, hospitable, brilliant minds driving innovation, culture, and national progress worldwide.</p>
+            <div class="feature-tag">Ghayoor Awam</div>
+          </div>
+
+          <!-- Card 5: PEACE -->
+          <div class="feature-card tilt-card" data-tilt>
+            <div class="feature-card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <span class="feature-icon">🕊️</span>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="feature-title">PEACE</h3>
+            <p class="feature-desc">Together we build a peaceful future. Dedicated to global harmony, regional tranquility, and mutual respect among all communities.</p>
+            <div class="feature-tag">Aman Ka Paigham</div>
+          </div>
+
+          <!-- Card 6: PROGRESS -->
+          <div class="feature-card tilt-card" data-tilt>
+            <div class="feature-card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <span class="feature-icon">🚀</span>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="feature-title">PROGRESS</h3>
+            <p class="feature-desc">Building a brighter Pakistan for tomorrow. Advancing in science, technology, agriculture, and youth empowerment for the 21st century.</p>
+            <div class="feature-tag">Taraqqi Ki Rah</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- HISTORY & TIMELINE SECTION -->
+    <!-- ================================================== -->
+    <section class="section history-section" id="history">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="star-icon">📜</span>
+            <span>CHRONICLES OF GLORY</span>
+            <span class="star-icon">📜</span>
+          </div>
+          <h2 class="section-title">THE STORY OF 14 AUGUST 1947</h2>
+          <p class="section-subtitle">How a visionary dream became an independent sovereign reality on the 27th of Ramadan 1366 AH</p>
+          <div class="title-accent-bar"></div>
+        </div>
+
+        <div class="history-grid">
+          
+          <!-- Left Column: Quaid Tribute & Visual Card -->
+          <div class="history-visual-card">
+            <div class="visual-card-frame">
+              <img src="assets/images/quaid-e-azam.jpg" alt="Quaid-e-Azam Muhammad Ali Jinnah" class="history-img" loading="lazy">
+              <div class="history-img-overlay"></div>
+              <div class="history-badge-overlay">
+                <span class="badge-title">BABA-E-QAUM</span>
+                <span class="badge-sub">Quaid-e-Azam Muhammad Ali Jinnah</span>
+              </div>
+            </div>
+            <div class="history-summary-box">
+              <h4>The Vision of Freedom</h4>
+              <p>“There is no power on earth that can undo Pakistan.” Conceived in the intellectual foresight of Allama Muhammad Iqbal and forged by the tireless leadership of Muhammad Ali Jinnah, Pakistan emerged on the world map on 14 August 1947.</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Animated Timeline -->
+          <div class="history-timeline-wrapper">
+            <div class="timeline-line"></div>
+
+            <!-- Milestone 1 -->
+            <div class="timeline-item reveal-item">
+              <div class="timeline-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-year">1940</span>
+              </div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <span class="timeline-icon">🏛️</span>
+                  <h3 class="timeline-title">Lahore Resolution</h3>
+                </div>
+                <p class="timeline-text">On 23rd March 1940 at Minto Park (now Iqbal Park), the historic Pakistan Resolution was passed, demanding independent sovereign homeland for Muslims.</p>
+                <div class="timeline-meta">Minar-e-Pakistan Milestone</div>
+              </div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="timeline-item reveal-item">
+              <div class="timeline-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-year">1947</span>
+              </div>
+              <div class="timeline-card highlight-card">
+                <div class="timeline-header">
+                  <span class="timeline-icon">🇵🇰</span>
+                  <h3 class="timeline-title">Pakistan Independence</h3>
+                </div>
+                <p class="timeline-text">At midnight between 14th and 15th August (27th Ramadan), the dream turned into reality. Radio Pakistan made the fateful announcement: <em>"This is Pakistan Broadcasting Service."</em></p>
+                <div class="timeline-meta">Dawn of Freedom</div>
+              </div>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="timeline-item reveal-item">
+              <div class="timeline-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-year">1956</span>
+              </div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <span class="timeline-icon">⚖️</span>
+                  <h3 class="timeline-title">First Constitution</h3>
+                </div>
+                <p class="timeline-text">Adoption of Pakistan's first formal constitution, officially proclaiming the nation as the Islamic Republic of Pakistan.</p>
+                <div class="timeline-meta">Republic Proclaimed</div>
+              </div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="timeline-item reveal-item">
+              <div class="timeline-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-year">1973</span>
+              </div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <span class="timeline-icon">📜</span>
+                  <h3 class="timeline-title">The 1973 Constitution</h3>
+                </div>
+                <p class="timeline-text">A landmark unanimous democratic constitution establishing the parliamentary democracy, fundamental rights, and federal framework.</p>
+                <div class="timeline-meta">Constitutional Milestone</div>
+              </div>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div class="timeline-item reveal-item">
+              <div class="timeline-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-year">Present</span>
+              </div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <span class="timeline-icon">🚀</span>
+                  <h3 class="timeline-title">A Nation Moving Forward</h3>
+                </div>
+                <p class="timeline-text">A resilient nuclear power, vibrant tech hub, and dynamic youthful population marching confidently toward a prosperous, technologically advanced future.</p>
+                <div class="timeline-meta">Future of Pakistan</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- QUAID-E-AZAM QUOTE SECTION -->
+    <!-- ================================================== -->
+    <section class="section quote-section" id="quote">
+      <div class="container">
+        
+        <div class="quote-container">
+          <div class="quote-backdrop-glow"></div>
+          
+          <div class="quote-header">
+            <div class="crescent-badge">
+              <img src="assets/icons/crescent-star.svg" alt="Crescent and Star" class="quote-badge-icon">
+            </div>
+            <h3 class="quote-motto-title">FAITH • UNITY • DISCIPLINE</h3>
+            <span class="quote-urdu">ایمان، اتحاد، نظم و ضبط</span>
+          </div>
+
+          <blockquote class="quaid-quote">
+            <span class="quote-mark open">“</span>
+            <p class="quote-body">
+              With faith, discipline and selfless devotion to duty, there is nothing worthwhile that you cannot achieve.
+            </p>
+            <span class="quote-mark close">”</span>
+          </blockquote>
+
+          <div class="quote-author-info">
+            <div class="author-line"></div>
+            <div class="author-details">
+              <span class="author-name">Quaid-e-Azam Muhammad Ali Jinnah</span>
+              <span class="author-role">Founder & First Governor-General of Pakistan</span>
+              <span class="author-date">Speech at Gujranwala, 28th December 1947</span>
+            </div>
+            <div class="author-line"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- LANDMARKS OF PAKISTAN -->
+    <!-- ================================================== -->
+    <section class="section landmarks-section" id="landmarks">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="star-icon">🏛️</span>
+            <span>NATIONAL ARCHITECTURE</span>
+            <span class="star-icon">🏛️</span>
+          </div>
+          <h2 class="section-title">LANDMARKS OF PAKISTAN</h2>
+          <p class="section-subtitle">Iconic monuments and architectural masterworks that embody our heritage and sovereign identity</p>
+          <div class="title-accent-bar"></div>
+        </div>
+
+        <div class="landmarks-grid">
+          
+          <!-- Landmark 1: Minar-e-Pakistan -->
+          <div class="landmark-card">
+            <div class="landmark-img-box">
+              <img src="assets/images/minar-e-pakistan.jpg" alt="Minar-e-Pakistan in Lahore illuminated at night" class="landmark-img" loading="lazy">
+              <div class="landmark-tag">Lahore</div>
+              <div class="landmark-hover-overlay">
+                <button class="btn-view-landmark" data-landmark="minar">Explore Details</button>
+              </div>
+            </div>
+            <div class="landmark-content">
+              <div class="landmark-city-badge">📍 Lahore, Punjab</div>
+              <h3 class="landmark-title">Minar-e-Pakistan</h3>
+              <p class="landmark-desc">The national monument towering at 70 meters in Iqbal Park, built to commemorate the historic Lahore Resolution passed on 23 March 1940.</p>
+              <div class="landmark-footer">
+                <span class="landmark-stat">Built: 1968</span>
+                <span class="landmark-stat">Height: 70m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Landmark 2: Faisal Mosque -->
+          <div class="landmark-card">
+            <div class="landmark-img-box">
+              <img src="assets/images/faisal-mosque.jpg" alt="Faisal Mosque in Islamabad under starry sky" class="landmark-img" loading="lazy">
+              <div class="landmark-tag">Islamabad</div>
+              <div class="landmark-hover-overlay">
+                <button class="btn-view-landmark" data-landmark="faisal">Explore Details</button>
+              </div>
+            </div>
+            <div class="landmark-content">
+              <div class="landmark-city-badge">📍 Islamabad, Federal Capital</div>
+              <h3 class="landmark-title">Faisal Mosque</h3>
+              <p class="landmark-desc">One of the world's most breathtaking modern mosques, nestled at the foot of Margalla Hills with iconic Bedouin-tent contemporary architecture.</p>
+              <div class="landmark-footer">
+                <span class="landmark-stat">Capacity: 300,000</span>
+                <span class="landmark-stat">Minarets: 90m</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Landmark 3: Badshahi Mosque -->
+          <div class="landmark-card">
+            <div class="landmark-img-box">
+              <img src="assets/images/badshahi-mosque.jpg" alt="Badshahi Mosque in Lahore illuminated" class="landmark-img" loading="lazy">
+              <div class="landmark-tag">Lahore</div>
+              <div class="landmark-hover-overlay">
+                <button class="btn-view-landmark" data-landmark="badshahi">Explore Details</button>
+              </div>
+            </div>
+            <div class="landmark-content">
+              <div class="landmark-city-badge">📍 Lahore, Punjab</div>
+              <h3 class="landmark-title">Badshahi Mosque</h3>
+              <p class="landmark-desc">A magnificent 17th-century Mughal marvel constructed in carved red sandstone and white marble, representing Pakistan's timeless imperial heritage.</p>
+              <div class="landmark-footer">
+                <span class="landmark-stat">Built: 1673</span>
+                <span class="landmark-stat">Mughal Era</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Landmark 4: Pakistan Monument -->
+          <div class="landmark-card">
+            <div class="landmark-img-box">
+              <img src="assets/images/pakistan-monument.jpg" alt="Pakistan Monument in Islamabad illuminated" class="landmark-img" loading="lazy">
+              <div class="landmark-tag">Islamabad</div>
+              <div class="landmark-hover-overlay">
+                <button class="btn-view-landmark" data-landmark="monument">Explore Details</button>
+              </div>
+            </div>
+            <div class="landmark-content">
+              <div class="landmark-city-badge">📍 Islamabad, Shakarparian</div>
+              <h3 class="landmark-title">Pakistan Monument</h3>
+              <p class="landmark-desc">Bloom-shaped national monument representing the four provinces and three territories of Pakistan, symbolizing unity under one grand crescent and star.</p>
+              <div class="landmark-footer">
+                <span class="landmark-stat">Built: 2007</span>
+                <span class="landmark-stat">Granite & Murals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Landmark 5: Mazar-e-Quaid -->
+          <div class="landmark-card">
+            <div class="landmark-img-box">
+              <img src="assets/images/mazar-e-quaid.jpg" alt="Mazar-e-Quaid in Karachi illuminated" class="landmark-img" loading="lazy">
+              <div class="landmark-tag">Karachi</div>
+              <div class="landmark-hover-overlay">
+                <button class="btn-view-landmark" data-landmark="quaid">Explore Details</button>
+              </div>
+            </div>
+            <div class="landmark-content">
+              <div class="landmark-city-badge">📍 Karachi, Sindh</div>
+              <h3 class="landmark-title">Mazar-e-Quaid</h3>
+              <p class="landmark-desc">The majestic white marble mausoleum of Quaid-e-Azam Muhammad Ali Jinnah, featuring a modern parabolic arch design and serene manicured gardens.</p>
+              <div class="landmark-footer">
+                <span class="landmark-stat">Built: 1970</span>
+                <span class="landmark-stat">Pure White Marble</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- 14 AUGUST CELEBRATION SECTION -->
+    <!-- ================================================== -->
+    <section class="section celebration-section" id="celebration">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="star-icon">🎉</span>
+            <span>FESTIVE TRADITIONS</span>
+            <span class="star-icon">🎉</span>
+          </div>
+          <h2 class="section-title">CELEBRATE THE SPIRIT OF PAKISTAN</h2>
+          <p class="section-subtitle">Across every boulevard, rooftop, and public square, 240+ million citizens unite in emerald joy</p>
+          <div class="title-accent-bar"></div>
+        </div>
+
+        <div class="celebration-grid">
+          
+          <!-- Card 1: Flag Hoisting -->
+          <div class="celebration-card reveal-item">
+            <div class="celebration-badge-num">01</div>
+            <div class="celebration-icon-box">
+              <span class="celebration-icon">🇵🇰</span>
+            </div>
+            <h3 class="celebration-title">Flag Hoisting Ceremonies</h3>
+            <p class="celebration-desc">Official ceremonies at the President House, Parliament, and provincial assemblies accompanied by the 31-gun salute in the federal capital.</p>
+            <div class="celebration-glow-bar"></div>
+          </div>
+
+          <!-- Card 2: Fireworks -->
+          <div class="celebration-card reveal-item">
+            <div class="celebration-badge-num">02</div>
+            <div class="celebration-icon-box">
+              <span class="celebration-icon">🎆</span>
+            </div>
+            <h3 class="celebration-title">Midnight Fireworks</h3>
+            <p class="celebration-desc">At the stroke of midnight, skylines from Karachi to Islamabad and Lahore erupt in brilliant emerald, gold, and white pyrotechnic displays.</p>
+            <div class="celebration-glow-bar"></div>
+          </div>
+
+          <!-- Card 3: National Songs -->
+          <div class="celebration-card reveal-item">
+            <div class="celebration-badge-num">03</div>
+            <div class="celebration-icon-box">
+              <span class="celebration-icon">🎵</span>
+            </div>
+            <h3 class="celebration-title">National Songs & Anthems</h3>
+            <p class="celebration-desc">Timeless melodies echoing across airwaves — from <em>"Dil Dil Pakistan"</em> and <em>"Jeevay Jeevay Pakistan"</em> to the revered National Anthem.</p>
+            <div class="celebration-glow-bar"></div>
+          </div>
+
+          <!-- Card 4: Cultural Events -->
+          <div class="celebration-card reveal-item">
+            <div class="celebration-badge-num">04</div>
+            <div class="celebration-icon-box">
+              <span class="celebration-icon">🎉</span>
+            </div>
+            <h3 class="celebration-title">Cultural Parades & Lighting</h3>
+            <p class="celebration-desc">Buildings draped in fairy lights, bustling bazaars flooded with green bunting, face-painting stalls, and colorful vintage vehicle rallies.</p>
+            <div class="celebration-glow-bar"></div>
+          </div>
+
+          <!-- Card 5: Prayers & Gratitude -->
+          <div class="celebration-card reveal-item">
+            <div class="celebration-badge-num">05</div>
+            <div class="celebration-icon-box">
+              <span class="celebration-icon">❤️</span>
+            </div>
+            <h3 class="celebration-title">Prayers & Gratitude</h3>
+            <p class="celebration-desc">Special morning prayers in mosques and worship places across the country for continuous peace, progress, prosperity, and national solidarity.</p>
+            <div class="celebration-glow-bar"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- PATRIOTIC GALLERY ("COLORS OF PAKISTAN") -->
+    <!-- ================================================== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="star-icon">📸</span>
+            <span>VISUAL TAPESTRY</span>
+            <span class="star-icon">📸</span>
+          </div>
+          <h2 class="section-title">COLORS OF PAKISTAN</h2>
+          <p class="section-subtitle">A breathtaking visual journey celebrating our mountains, monuments, culture, and vibrant spirit</p>
+          <div class="title-accent-bar"></div>
+        </div>
+
+        <!-- Gallery Filter Tabs -->
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All Colors</button>
+          <button class="filter-btn" data-filter="landmarks">Landmarks</button>
+          <button class="filter-btn" data-filter="celebrations">Celebrations</button>
+          <button class="filter-btn" data-filter="heritage">Heritage</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+          
+          <!-- Item 1: Faisal Mosque Night Lights -->
+          <div class="gallery-item" data-category="landmarks" data-src="assets/images/faisal-mosque.jpg" data-title="Faisal Mosque Illuminated" data-caption="Faisal Mosque glowing in emerald brilliance beneath festive fireworks in Islamabad.">
+            <div class="gallery-thumb-wrapper">
+              <img src="assets/images/faisal-mosque.jpg" alt="Faisal Mosque Islamabad" class="gallery-thumb" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <span class="gallery-category">Landmarks</span>
+                  <h4 class="gallery-title">Faisal Mosque Splendor</h4>
+                  <span class="view-btn"><span class="view-icon">🔍</span> View Full</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Minar-e-Pakistan -->
+          <div class="gallery-item" data-category="landmarks" data-src="assets/images/minar-e-pakistan.jpg" data-title="Minar-e-Pakistan Celebration" data-caption="Minar-e-Pakistan reflecting green lights in Iqbal Park lake during 14 August pyrotechnics.">
+            <div class="gallery-thumb-wrapper">
+              <img src="assets/images/minar-e-pakistan.jpg" alt="Minar-e-Pakistan Lahore" class="gallery-thumb" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <span class="gallery-category">Landmarks</span>
+                  <h4 class="gallery-title">Tower of Resolution</h4>
+                  <span class="view-btn"><span class="view-icon">🔍</span> View Full</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Badshahi Mosque Heritage -->
+          <div class="gallery-item" data-category="heritage" data-src="assets/images/badshahi-mosque.jpg" data-title="Badshahi Mosque Grandeur" data-caption="Imperial Mughal architecture of Badshahi Mosque radiating warm golden and emerald lights.">
+            <div class="gallery-thumb-wrapper">
+              <img src="assets/images/badshahi-mosque.jpg" alt="Badshahi Mosque Lahore" class="gallery-thumb" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <span class="gallery-category">Heritage</span>
+                  <h4 class="gallery-title">Badshahi Grandeur</h4>
+                  <span class="view-btn"><span class="view-icon">🔍</span> View Full</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Pakistan Monument -->
+          <div class="gallery-item" data-category="celebrations" data-src="assets/images/pakistan-monument.jpg" data-title="Pakistan Monument at Dusk" data-caption="The iconic petal monument glowing green overlooking the illuminated capital city of Islamabad.">
+            <div class="gallery-thumb-wrapper">
+              <img src="assets/images/pakistan-monument.jpg" alt="Pakistan Monument Islamabad" class="gallery-thumb" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <span class="gallery-category">Celebrations</span>
+                  <h4 class="gallery-title">Petals of Unity</h4>
+                  <span class="view-btn"><span class="view-icon">🔍</span> View Full</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Mazar-e-Quaid -->
+          <div class="gallery-item" data-category="landmarks" data-src="assets/images/mazar-e-quaid.jpg" data-title="Mazar-e-Quaid, Karachi" data-caption="Pure white marble mausoleum of Quaid-e-Azam Muhammad Ali Jinnah reflecting across the central pool.">
+            <div class="gallery-thumb-wrapper">
+              <img src="assets/images/mazar-e-quaid.jpg" alt="Mazar-e-Quaid Karachi" class="gallery-thumb" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <span class="gallery-category">Landmarks</span>
+                  <h4 class="gallery-title">Father's Resting Place</h4>
+                  <span class="view-btn"><span class="view-icon">🔍</span> View Full</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Quaid-e-Azam Tribute -->
+          <div class="gallery-item" data-category="heritage" data-src="assets/images/quaid-e-azam.jpg" data-title="Quaid-e-Azam Muhammad Ali Jinnah" data-caption="Dignified historic portrait of our beloved Founder Quaid-e-Azam Muhammad Ali Jinnah.">
+            <div class="gallery-thumb-wrapper">
+              <img src="assets/images/quaid-e-azam.jpg" alt="Quaid-e-Azam Muhammad Ali Jinnah" class="gallery-thumb" loading="lazy">
+              <div class="gallery-overlay">
+                <div class="gallery-info">
+                  <span class="gallery-category">Heritage</span>
+                  <h4 class="gallery-title">Leader of Freedom</h4>
+                  <span class="view-btn"><span class="view-icon">🔍</span> View Full</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- INTERACTIVE PLEDGE / WISH WALL -->
+    <!-- ================================================== -->
+    <section class="section pledge-section" id="pledge">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-badge">
+            <span class="star-icon">✍️</span>
+            <span>NATIONAL PLEDGE</span>
+            <span class="star-icon">✍️</span>
+          </div>
+          <h2 class="section-title">VOICES OF PATRIOTISM</h2>
+          <p class="section-subtitle">Leave your personal wish and pledge for the prosperity of Pakistan</p>
+          <div class="title-accent-bar"></div>
+        </div>
+
+        <div class="pledge-container">
+          
+          <!-- Pledge Form -->
+          <div class="pledge-form-card">
+            <h3 class="form-title">Send Your Independence Day Message 🇵🇰</h3>
+            <form id="pledgeForm" class="pledge-form">
+              <div class="form-group">
+                <label for="pledgeName">Your Full Name / City</label>
+                <input type="text" id="pledgeName" placeholder="e.g. Ayesha Khan (Lahore)" required maxlength="40">
+              </div>
+              <div class="form-group">
+                <label for="pledgeMessage">Your Wish or Pledge for Pakistan</label>
+                <textarea id="pledgeMessage" rows="3" placeholder="e.g. May Pakistan always rise in peace, unity, and technological innovation! Pakistan Paindabad!" required maxlength="180"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-pledge-submit">
+                <span>Post Your Pledge</span>
+                <span class="btn-arrow">✨</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Live Pledge Stream -->
+          <div class="pledge-wall-card">
+            <div class="wall-header">
+              <h4>Live Patriotic Wall</h4>
+              <span class="live-pulse-badge"><span class="live-dot"></span> Active</span>
+            </div>
+            <div class="pledge-stream" id="pledgeStream">
+              <!-- Seed Pledges -->
+              <div class="pledge-card-item">
+                <div class="pledge-author">
+                  <span class="author-avatar">🇵🇰</span>
+                  <div>
+                    <strong>Hamza Tariq (Islamabad)</strong>
+                    <span class="pledge-time">Just now</span>
+                  </div>
+                </div>
+                <p class="pledge-msg">"Happy 79th Independence Day to all Pakistanis! Let's pledge to build a cleaner, greener, and united Pakistan."</p>
+              </div>
+
+              <div class="pledge-card-item">
+                <div class="pledge-author">
+                  <span class="author-avatar">🌙</span>
+                  <div>
+                    <strong>Dr. Fatima Zehra (Karachi)</strong>
+                    <span class="pledge-time">2 mins ago</span>
+                  </div>
+                </div>
+                <p class="pledge-msg">"From the mountains of Gilgit to the coast of Gwadar, Pakistan Zindabad forever! Iman, Ittehad, Nazm."</p>
+              </div>
+
+              <div class="pledge-card-item">
+                <div class="pledge-author">
+                  <span class="author-avatar">⭐</span>
+                  <div>
+                    <strong>Bilal Ahmed (Peshawar)</strong>
+                    <span class="pledge-time">5 mins ago</span>
+                  </div>
+                </div>
+                <p class="pledge-msg">"Salute to our martyrs and founders who gave everything for this sacred flag. Long live Pakistan!"</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================== -->
+    <!-- PATRIOTIC CTA SECTION -->
+    <!-- ================================================== -->
+    <section class="section cta-section" id="cta">
+      <div class="container">
+        
+        <div class="cta-banner">
+          <div class="cta-glow-mesh" aria-hidden="true"></div>
+          <div class="cta-content">
+            
+            <div class="cta-icon-wrapper">
+              <img src="assets/icons/crescent-star.svg" alt="Crescent and Star" class="cta-emblem">
+            </div>
+
+            <h2 class="cta-title">LET'S CELEBRATE FREEDOM</h2>
+            <p class="cta-lead">
+              Let's honor our past, celebrate our present and build a better Pakistan for tomorrow.
+            </p>
+            <p class="cta-urdu">شاد باد منزلِ مُراد، پرچمِ ستارہ و ہلال، رہبرِ ترقّی و کمال</p>
+
+            <div class="cta-actions">
+              <button class="btn btn-grand-cta" id="ctaCelebrateBtn">
+                <span class="flag-icon">🇵🇰</span>
+                <span class="cta-btn-text">Pakistan Zindabad</span>
+                <span class="sparkle-orbit">✨</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================== -->
+  <!-- FOOTER -->
+  <!-- ================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Brand & Motto -->
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <img src="assets/icons/crescent-star.svg" alt="Pakistan Zindabad" class="footer-logo-icon">
+            <span class="footer-logo-text">PAKISTAN <span class="accent-gold">ZINDABAD</span></span>
+          </div>
+          <p class="footer-motto">“One Nation • One Vision • One Identity”</p>
+          <p class="footer-desc">Commemorating 14 August 1947 — Celebrating the triumph of faith, resilience, and unity of 240+ million proud Pakistanis.</p>
+          
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Facebook" title="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter / X" title="Twitter / X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube" title="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Our Pride</a></li>
+            <li><a href="#history">1947 History</a></li>
+            <li><a href="#celebration">Celebrations</a></li>
+            <li><a href="#landmarks">National Landmarks</a></li>
+            <li><a href="#gallery">Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Independence Day Facts -->
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">National Heritage</h4>
+          <ul class="footer-nav-list">
+            <li><span>Date: 14 August 1947</span></li>
+            <li><span>Day of Islam: 27 Ramadan 1366 AH</span></li>
+            <li><span>National Motto: Faith, Unity, Discipline</span></li>
+            <li><span>Anthem: Qaumi Taranah</span></li>
+            <li><span>National Poet: Allama Muhammad Iqbal</span></li>
+            <li><span>Founder: Quaid-e-Azam M.A. Jinnah</span></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Pledge -->
+        <div class="footer-newsletter-col">
+          <h4 class="footer-col-title">Patriotic Bulletin</h4>
+          <p>Subscribe for commemorative stories, national archives, and future celebration announcements.</p>
+          <form id="newsletterForm" class="footer-subscribe-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit" aria-label="Subscribe">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <p>© 2026 Pakistan Independence Day Celebration. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom-right">
+          <p>Made with <span class="heart-pulse">❤️</span> for <strong class="text-flag-green">PAKISTAN</strong> 🇵🇰</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================================== -->
+  <!-- LIGHTBOX MODAL -->
+  <!-- ================================================== -->
+  <div id="galleryLightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image Gallery Lightbox">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-container">
+      
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+      <button class="lightbox-nav-btn prev" id="lightboxPrev" aria-label="Previous Image">&#10094;</button>
+      <button class="lightbox-nav-btn next" id="lightboxNext" aria-label="Next Image">&#10095;</button>
+
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrapper">
+          <img src="" alt="" id="lightboxImg" class="lightbox-image">
+        </div>
+        <div class="lightbox-caption-panel">
+          <h3 id="lightboxTitle" class="lightbox-title"></h3>
+          <p id="lightboxCaption" class="lightbox-caption"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- GRAND SPECIAL "CRAZY" CELEBRATION MODAL OVERLAY -->
+  <!-- ================================================== -->
+  <div id="celebrationOverlay" class="celebration-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="celebration-modal-backdrop" id="celebrationBackdrop"></div>
+    
+    <!-- Confetti & Floating Flags Canvas Container -->
+    <canvas id="celebrationConfettiCanvas" class="celebration-confetti-canvas"></canvas>
+
+    <div class="celebration-modal-card">
+      <button class="celebration-modal-close" id="celebrationModalClose" aria-label="Close Celebration Overlay">&times;</button>
+      
+      <div class="celebration-modal-header">
+        <div class="modal-flag-burst">
+          <span class="burst-icon">🇵🇰</span>
+        </div>
+        <span class="modal-badge-script">14th August 1947</span>
+        <h2 class="modal-main-heading">🇵🇰 HAPPY INDEPENDENCE DAY! 🇵🇰</h2>
+        <div class="modal-accent-line"></div>
+      </div>
+
+      <div class="modal-body-content">
+        <h3 class="modal-slogan">PAKISTAN ZINDABAD!</h3>
+        <p class="modal-urdu-tag">پاکستان ہمیشہ زندہ و پائندہ باد</p>
+        <p class="modal-message">
+          May the green and white flag fly high with sovereignty, honor, peace, and boundless prosperity across all corners of our homeland!
+        </p>
+
+        <div class="modal-action-buttons">
+          <button class="btn btn-primary btn-modal-cheer" id="btnCheerAgain">
+            <span>Blast More Fireworks! 🎆</span>
+          </button>
+          <button class="btn btn-secondary btn-modal-dismiss" id="btnModalDismiss">
+            <span>Continue Exploring</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

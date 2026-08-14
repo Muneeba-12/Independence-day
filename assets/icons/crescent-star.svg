@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF4B8"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+    <filter id="crescentShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00ff87" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <g filter="url(#crescentShadow)">
+    <!-- Crescent Moon rotated 45 deg -->
+    <path d="M52,15 A35,35 0 1,0 85,75 A30,30 0 1,1 52,15 Z" fill="#FFFFFF"/>
+    <!-- 5-pointed star rotated 45 deg -->
+    <polygon points="68,22 72,33 83,34 74,41 78,52 68,45 58,52 62,41 53,34 64,33" fill="#FFFFFF"/>
+  </g>
+</svg>

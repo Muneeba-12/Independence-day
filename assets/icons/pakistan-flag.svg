@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flagGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#01411C"/>
+      <stop offset="60%" stop-color="#025a28"/>
+      <stop offset="100%" stop-color="#013617"/>
+    </linearGradient>
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Flag Base: 900 x 600 (3:2 ratio) -->
+  <!-- White Stripe: 225px wide (1/4th) -->
+  <rect x="0" y="0" width="225" height="600" fill="#FFFFFF"/>
+  <!-- Dark Green Field: 675px wide (3/4th) -->
+  <rect x="225" y="0" width="675" height="600" fill="url(#flagGreen)"/>
+  
+  <!-- Crescent and Star in Green Field: Centered around (562.5, 300) with 45-degree inclination -->
+  <g transform="translate(562.5, 300) rotate(-45)">
+    <!-- Crescent Moon -->
+    <path d="M 0,-180 A 180,180 0 1,0 180,0 A 150,150 0 1,1 0,-180 Z" fill="#FFFFFF" filter="url(#glowEffect)"/>
+    <!-- 5-pointed Star pointing towards fly corner -->
+    <g transform="translate(100, -100) rotate(18)">
+      <polygon points="0,-65 19,-20 62,-20 27,6 40,49 0,23 -40,49 -27,6 -62,-20 -19,-20" fill="#FFFFFF" filter="url(#glowEffect)"/>
+    </g>
+  </g>
+</svg>
